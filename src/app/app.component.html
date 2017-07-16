@@ -1,5 +1,9 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <app-user *ngFor="let userName of users" [name]=userName></app-user>
+<div>
+  <app-user *ngFor="let userInfo of users" [info]=userInfo></app-user>
+  <p>
+    <button (click)="saveUserList()">Save All</button>
+    <button (click)="addNewUser()">Add new user</button>
+  </p>
 </div>
 

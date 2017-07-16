@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import {UserInfo} from './defines/UserInfo';
+import {UserInfoService} from './services/user-info.service';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  users = ['Liza', 'David', 'Irina', 'Mxo', 'Artur', 'Hovsep', 'Hakob'];
+  users: UserInfo[];
+  constructor(private userInfoService: UserInfoService) {
+    this.users = userInfoService.getUserList();
+  }
+
+  saveUserList() {
+    this.userInfoService.saveUserList(this.users);
+  }
+
+  addNewUser() {
+    this.users.push(new UserInfo({name: '', surname: '', age: null, isNew: true}));
+  }
 }

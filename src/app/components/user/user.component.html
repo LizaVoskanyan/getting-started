@@ -1,1 +1,11 @@
-<p>{{name}}</p>
+<span *ngIf="!editMode">
+  <b class="name" [innerText]="info.name"></b>
+  <i class="surname" [innerText]="info.surname"></i>
+  <u class="age" [innerText]="info.age"></u>
+</span>
+<span *ngIf="editMode">
+  <input class="name" [(ngModel)]="info.name" />
+  <input class="surname" [(ngModel)]="info.surname" />
+  <input class="age" [(ngModel)]="info.age" />
+</span>
+<span class="material-icons" [innerText]=modeIcon (click)="changeMode()"></span>
