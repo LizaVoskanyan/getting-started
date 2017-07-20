@@ -21,4 +21,12 @@ export class AppComponent {
   addNewUser() {
     this.users.push(new UserInfo({name: '', surname: '', age: null, isNew: true}));
   }
+
+  saveUser(userInfo: UserInfo) {
+    this.userInfoService.saveUser(userInfo);
+  }
+
+  deleteUser(userInfo: UserInfo) {
+    this.userInfoService.deleteUser(userInfo);
+  }
 }

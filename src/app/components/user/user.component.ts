@@ -1,4 +1,4 @@
-import {Component, OnInit, Input} from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import {UserInfo} from '../../defines/UserInfo';
 
 
@@ -12,6 +12,11 @@ export class UserComponent implements OnInit {
   info: UserInfo;
   editMode = false;
 
+  @Output()
+  done = new EventEmitter<UserInfo>();
+  @Output()
+  delete = new EventEmitter<UserInfo>();
+
   constructor() {}
 
   get modeIcon() {
@@ -19,7 +24,15 @@ export class UserComponent implements OnInit {
   }
 
   changeMode() {
+    if (this.editMode) {
+      this.done.emit(this.info);
+    }
+
     this.editMode = !this.editMode;
+  }
+
+  onDelete() {
+    this.delete.emit(this.info);
   }
 
   ngOnInit() {

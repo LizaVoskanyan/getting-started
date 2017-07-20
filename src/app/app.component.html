@@ -1,9 +1,9 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div>
-  <app-user *ngFor="let userInfo of users" [info]=userInfo></app-user>
+  <app-user *ngFor="let userInfo of users" [info]=userInfo
+            (done)="saveUser($event)" (delete)="deleteUser($event)"></app-user>
   <p>
     <button (click)="saveUserList()">Save All</button>
     <button (click)="addNewUser()">Add new user</button>
   </p>
 </div>
-
