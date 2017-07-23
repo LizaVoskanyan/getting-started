@@ -32,3 +32,8 @@ b, i, u {
   user-select: none;
   vertical-align: middle;
 }
+
+
+nb-checkbox {
+  margin-right: 10px;
+}

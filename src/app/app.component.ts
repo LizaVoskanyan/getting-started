@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {UserInfo} from './defines/UserInfo';
 import {UserInfoService} from './services/user-info.service';
 
@@ -10,6 +10,7 @@ import {UserInfoService} from './services/user-info.service';
 })
 export class AppComponent {
   users: UserInfo[];
+
   constructor(private userInfoService: UserInfoService) {
     this.users = userInfoService.getUserList();
   }

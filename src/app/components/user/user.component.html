@@ -1,12 +1,16 @@
-<span *ngIf="!editMode">
+<span *ngIf="!editMode; else elseContent">
+  <nb-checkbox [value]="info.isAdmin" [disabled]="true">Is Admin</nb-checkbox>
   <b class="name" [innerText]="info.name"></b>
   <i class="surname" [innerText]="info.surname"></i>
   <u class="age" [innerText]="info.age"></u>
 </span>
-<span *ngIf="editMode">
+<ng-template #elseContent>
+<span>
+  <nb-checkbox [(ngModel)]="info.isAdmin">Is Admin</nb-checkbox>
   <input class="name" [(ngModel)]="info.name" />
   <input class="surname" [(ngModel)]="info.surname" />
   <input class="age" [(ngModel)]="info.age" type="number" />
 </span>
+</ng-template>
 <span class="material-icons" [innerText]=modeIcon (click)="changeMode()"></span>
 <span class="material-icons" (click)="onDelete()">delete</span>

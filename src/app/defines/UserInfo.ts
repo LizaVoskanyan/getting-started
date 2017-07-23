@@ -13,6 +13,7 @@ export class UserInfo {
   surname: string;
   age: number;
   isNew?: boolean;
+  isAdmin?: boolean;
 
   constructor(data: UserInfo) {
     if (data.id) {
@@ -21,6 +22,7 @@ export class UserInfo {
     this.name = data.name;
     this.surname = data.surname;
     this.age = data.age;
+    this.isAdmin = data.isAdmin;
 
     this.isNew = data.isNew;
     makeNotEnumerable(this, 'isNew');
