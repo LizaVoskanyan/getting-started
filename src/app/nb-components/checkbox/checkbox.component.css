@@ -1,0 +1,32 @@
+:host {
+  position: relative;
+}
+
+label {
+  display: inline-block;
+}
+
+input {
+  opacity: 0;
+  position: absolute;
+}
+
+i {
+  background: blue;
+  display: inline-block;
+  height: 20px;
+  vertical-align: middle;
+  width: 20px;
+}
+
+:checked + i {
+  background: red;
+}
+
+:disabled + i {
+  opacity: .3;
+}
+
+span {
+  vertical-align: middle;
+}
