@@ -6,6 +6,7 @@ const userInfoKey = 'userInfoList';
 @Injectable()
 export class UserInfoService {
   storage: Storage;
+  user: UserInfo = null;
   userList: UserInfo[] = null;
 
   constructor() {
@@ -20,6 +21,10 @@ export class UserInfoService {
     return this.userList = JSON.parse(this.storage[userInfoKey])
         .map(data => new UserInfo(data));
   }
+
+/*  getUser(): UserInfo {
+
+  }*/
 
   saveUserList(userList: UserInfo[]) {
     this.userList = userList;

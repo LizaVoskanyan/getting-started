@@ -8,18 +8,47 @@ import {UserComponent} from './components/user/user.component';
 import {UserInfoService} from './services/user-info.service';
 import {NbComponentsModule} from './nb-components/nb-components.module';
 
+import { RouterModule, Routes } from '@angular/router';
+import { UserListComponent } from './components/user-list/user-list.component';
+import { UserInfoComponent } from './components/user-info/user-info.component';
+
+
+
+const appRoutes: Routes = [
+  {
+    path: 'user/:id',
+    component: UserInfoComponent
+  },
+  {
+    path: '' ,
+    component: UserListComponent
+  },
+/*  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  }*/
+];
+
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent
+    UserComponent,
+    UserListComponent,
+    UserInfoComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    NbComponentsModule
+    NbComponentsModule,
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true}
+    )
   ],
   providers: [UserInfoService],
   bootstrap: [AppComponent]
 })
+
 export class AppModule {
 }

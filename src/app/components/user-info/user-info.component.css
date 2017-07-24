@@ -37,20 +37,3 @@ b, i, u {
 nb-checkbox {
   margin-right: 10px;
 }
-
-a:link {
-  text-decoration: none;
-  color: black;
-}
-
-a:visited {
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-a:active {
-  text-decoration: underline;
-}

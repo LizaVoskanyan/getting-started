@@ -2,12 +2,13 @@ import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import {UserInfo} from '../../defines/UserInfo';
 import {ActivatedRoute} from '@angular/router';
 
+
 @Component({
-  selector: 'app-user',
-  templateUrl: './user.component.html',
-  styleUrls: ['./user.component.css']
+  selector: 'app-user-info',
+  templateUrl: './user-info.component.html',
+  styleUrls: ['./user-info.component.css']
 })
-export class UserComponent implements OnInit {
+export class UserInfoComponent implements OnInit {
   id: number;
   private sub: any;
 
@@ -26,7 +27,6 @@ export class UserComponent implements OnInit {
     });
   }
 
-
   get modeIcon() {
     return this.editMode ? 'done' : 'mode_edit';
   }
@@ -44,7 +44,8 @@ export class UserComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.editMode = this.info.isNew;
+    //this.editMode = this.info.isNew;
   }
 
 }
+

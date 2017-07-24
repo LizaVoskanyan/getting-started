@@ -12,7 +12,7 @@ input {
 }
 
 i {
-  background: blue;
+  background: lightgray;
   display: inline-block;
   height: 20px;
   vertical-align: middle;
@@ -20,7 +20,7 @@ i {
 }
 
 :checked + i {
-  background: red;
+  background: gray;
 }
 
 :disabled + i {

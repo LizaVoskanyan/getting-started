@@ -8,26 +8,4 @@ import {UserInfoService} from './services/user-info.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  users: UserInfo[];
-
-  constructor(private userInfoService: UserInfoService) {
-    this.users = userInfoService.getUserList();
-  }
-
-  saveUserList() {
-    this.userInfoService.saveUserList(this.users);
-  }
-
-  addNewUser() {
-    this.users.push(new UserInfo({name: '', surname: '', age: null, isNew: true}));
-  }
-
-  saveUser(userInfo: UserInfo) {
-    this.userInfoService.saveUser(userInfo);
-  }
-
-  deleteUser(userInfo: UserInfo) {
-    this.userInfoService.deleteUser(userInfo);
-  }
-}
+export class AppComponent {}

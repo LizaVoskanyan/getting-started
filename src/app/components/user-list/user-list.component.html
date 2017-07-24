@@ -1,0 +1,16 @@
+<!--<div>
+  <app-user-info *ngFor="let userInfo of users" [info]=userInfo
+            (done)="saveUser($event)" (delete)="deleteUser($event)"></app-user-info>
+  <p>
+    <button (click)="saveUserList()">Save All</button>
+    <button (click)="addNewUser()">Add new user</button>
+  </p>
+</div>-->
+<div>
+  <app-user *ngFor="let userInfo of users" [info]=userInfo
+            (done)="saveUser($event)" (delete)="deleteUser($event)"></app-user>
+  <p>
+    <button (click)="saveUserList()">Save All</button>
+    <button (click)="addNewUser()">Add new user</button>
+  </p>
+</div>
