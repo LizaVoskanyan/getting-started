@@ -1,6 +1,5 @@
 import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import {UserInfo} from '../../defines/UserInfo';
-import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -8,8 +7,6 @@ import {ActivatedRoute} from '@angular/router';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-  id: number;
-  private sub: any;
 
   @Input()
   info: UserInfo;
@@ -20,12 +17,8 @@ export class UserComponent implements OnInit {
   @Output()
   delete = new EventEmitter<UserInfo>();
 
-  constructor(private route: ActivatedRoute) {
-    this.sub = this.route.params.subscribe(params => {
-      this.id = +params['id'];
-    });
+  constructor() {
   }
-
 
   get modeIcon() {
     return this.editMode ? 'done' : 'mode_edit';

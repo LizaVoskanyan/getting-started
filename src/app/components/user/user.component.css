@@ -33,7 +33,6 @@ b, i, u {
   vertical-align: middle;
 }
 
-
 nb-checkbox {
   margin-right: 10px;
 }
@@ -41,16 +40,4 @@ nb-checkbox {
 a:link {
   text-decoration: none;
   color: black;
-}
-
-a:visited {
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-a:active {
-  text-decoration: underline;
 }

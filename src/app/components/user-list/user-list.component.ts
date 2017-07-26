@@ -17,20 +17,20 @@ export class UserListComponent implements OnInit {
     this.users = userInfoService.getUserList();
   }
 
-  saveUserList() {
-    this.userInfoService.saveUserList(this.users);
-  }
+    saveUserList() {
+      this.userInfoService.saveUserList(this.users);
+    }
 
-  addNewUser() {
-    this.users.push(new UserInfo({name: '', surname: '', age: null, isNew: true}));
-  }
+    addNewUser() {
+      this.users.push(new UserInfo({name: '', surname: '', age: null, isNew: true}));
+    }
 
-  saveUser(userInfo: UserInfo) {
-    this.userInfoService.saveUser(userInfo);
-  }
+    saveUser(userInfo: UserInfo) {
+      this.userInfoService.saveUser(userInfo);
+    }
 
-  deleteUser(userInfo: UserInfo) {
-    this.userInfoService.deleteUser(userInfo);
+    deleteUser(userInfo: UserInfo) {
+      this.userInfoService.deleteUser(userInfo);
   }
 
   ngOnInit() {}

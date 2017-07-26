@@ -1,0 +1,54 @@
+[
+  {
+    "id": "4aedeb6f-1d54-bce6-1591-14cf46758a00",
+    "name": "Liza",
+    "surname": "Voskanyan",
+    "age": 23,
+    "isAdmin": true
+  },
+  {
+    "id": "6e2826b3-08d9-20a8-1900-9304348a605d",
+    "name": "David",
+    "surname": "Hovhannisyan",
+    "age": 20,
+    "isAdmin": true
+  },
+  {
+    "id": "581dc4ea-df76-9b3e-e129-b7bd47273ea6",
+    "name": "Irina",
+    "surname": "Mkhitaryan",
+    "age": 35
+  },
+  {
+    "id": "73cab5b5-bd58-5e35-0b34-2d322774e8ff",
+    "name": "Artur",
+    "surname": "Avdalyan",
+    "age": 27
+  },
+  {
+    "id": "f29daf65-ac9a-cf1c-3136-00a9c6d9c6f6",
+    "name": "Hovsep",
+    "surname": "Poghosyan",
+    "age": 18,
+    "isAdmin": true
+  },
+  {
+    "id": "39e0e6b0-0a2a-01cb-8fe9-55fe388a2fda",
+    "name": "Hakob",
+    "surname": "Poghosyan",
+    "age": 22,
+    "isAdmin": true
+  },
+  {
+    "id": "ddd3a569-f9c3-e2ac-cd7e-1707d9fd0c9c",
+    "name": "David",
+    "surname": "Mirumyan",
+    "age": "19"
+  },
+  {
+    "id": "a116a039-209d-2cee-eadc-474fe7e1db3c",
+    "name": "Mxo",
+    "surname": "Grigoryan",
+    "age": 27
+  }
+]

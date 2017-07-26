@@ -1,13 +1,8 @@
-<!--<span >
-  <nb-checkbox [(ngModel)]="info.isAdmin" [disabled]="true">Is Admin</nb-checkbox>
-  <input class="name" [(ngModel)]="info.name" />
-  <input class="surname" [(ngModel)]="info.surname" />
-  <input class="age" [(ngModel)]="info.age" type="number" />
-</span>-->
-<span>
-  <nb-checkbox [value]="info.isAdmin" [disabled]="true">Is Admin</nb-checkbox>
-  <b class="name" [innerText]="info.name"></b>
-  <i class="surname" [innerText]="info.surname"></i>
-  <u class="age" [innerText]="info.age"></u>
-</span>
+<pre>
+  name: {{info.name}}
+  surname: {{info.surname}}
+  age: {{info.age}}
+  {{info.isAdmin ? 'is admin' : 'not admin'}}
+</pre>
 
+<button><a href="/home">back to home</a></button>

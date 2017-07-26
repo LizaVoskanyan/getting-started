@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {UserInfo} from '../defines/UserInfo';
+import {Http} from "@angular/http";
 
 const userInfoKey = 'userInfoList';
 
@@ -9,7 +10,11 @@ export class UserInfoService {
   user: UserInfo = null;
   userList: UserInfo[] = null;
 
-  constructor() {
+  constructor(http: Http) {
+    http.get('/assets/users.json')
+      .map(res => res.json())
+      .subscribe(data => console.log(data));
+
     this.storage = localStorage;
   }
 
@@ -22,9 +27,10 @@ export class UserInfoService {
         .map(data => new UserInfo(data));
   }
 
-/*  getUser(): UserInfo {
-
-  }*/
+  getUser(id: string) {
+    const userList = this.getUserList();
+    return userList.find(user => user.id === id);
+  }
 
   saveUserList(userList: UserInfo[]) {
     this.userList = userList;

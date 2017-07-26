@@ -1,6 +1,8 @@
-import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {UserInfo} from '../../defines/UserInfo';
 import {ActivatedRoute} from '@angular/router';
+import {UserInfoService} from '../../services/user-info.service';
+import 'rxjs/add/operator/map';
 
 
 @Component({
@@ -9,38 +11,12 @@ import {ActivatedRoute} from '@angular/router';
   styleUrls: ['./user-info.component.css']
 })
 export class UserInfoComponent implements OnInit {
-  id: number;
-  private sub: any;
-
-  @Input()
   info: UserInfo;
-  editMode = false;
 
-  @Output()
-  done = new EventEmitter<UserInfo>();
-  @Output()
-  delete = new EventEmitter<UserInfo>();
-
-  constructor(private route: ActivatedRoute) {
-    this.sub = this.route.params.subscribe(params => {
-      this.id = +params['id'];
-    });
-  }
-
-  get modeIcon() {
-    return this.editMode ? 'done' : 'mode_edit';
-  }
-
-  changeMode() {
-    if (this.editMode) {
-      this.done.emit(this.info);
-    }
-
-    this.editMode = !this.editMode;
-  }
-
-  onDelete() {
-    this.delete.emit(this.info);
+  constructor(route: ActivatedRoute, userInfoService: UserInfoService) {
+    route.params
+      .map(params => params.id)
+      .subscribe(id => this.info = userInfoService.getUser(id));
   }
 
   ngOnInit() {

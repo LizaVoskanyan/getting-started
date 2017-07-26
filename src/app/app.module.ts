@@ -11,23 +11,24 @@ import {NbComponentsModule} from './nb-components/nb-components.module';
 import { RouterModule, Routes } from '@angular/router';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { UserInfoComponent } from './components/user-info/user-info.component';
+import {HttpModule} from '@angular/http';
 
 
 
 const appRoutes: Routes = [
   {
-    path: 'user/:id',
+    path: 'home' ,
+    component: UserListComponent
+  },
+  {
+    path: 'home/user/:id',
     component: UserInfoComponent
   },
   {
-    path: '' ,
-    component: UserListComponent
-  },
-/*  {
     path: '',
-    redirectTo: 'home',
+    redirectTo: '/home',
     pathMatch: 'full'
-  }*/
+  }
 ];
 
 @NgModule({
@@ -41,10 +42,8 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     NbComponentsModule,
-    RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true}
-    )
+    RouterModule.forRoot(appRoutes),
+    HttpModule
   ],
   providers: [UserInfoService],
   bootstrap: [AppComponent]
