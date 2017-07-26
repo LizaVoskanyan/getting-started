@@ -1,7 +1,8 @@
 <label>
-  <input type="checkbox"
+  <span class="checkbox"><input type="checkbox"
          [(ngModel)]="value"
          [disabled]="disabled"
          (blur)="onBlur()"/>
+  </span>
   <span><ng-content></ng-content></span>
 </label>

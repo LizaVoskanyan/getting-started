@@ -1,9 +1,6 @@
 label {
   display: inline-block;
 }
-i {
-  vertical-align: middle;
-}
-span {
+i span {
   vertical-align: middle;
 }

@@ -11,7 +11,7 @@
   margin: 5px;
 }
 
-b, i, u {
+b, u {
   display: inline-block;
 }
 
@@ -37,7 +37,7 @@ nb-checkbox {
   margin-right: 10px;
 }
 
-a:link {
+a {
   text-decoration: none;
   color: black;
 }

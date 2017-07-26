@@ -1,12 +1,12 @@
 <a *ngIf="!editMode; else elseContent" [routerLink]="['user', info.id]">
-  <nb-checkbox [value]="info.isAdmin" [disabled]="true">Is Admin</nb-checkbox>
+  <nb-checkbox [value]="info.isAdmin" [disabled]="true"></nb-checkbox>
   <b class="name" [innerText]="info.name"></b>
-  <i class="surname" [innerText]="info.surname"></i>
+  <b class="surname" [innerText]="info.surname"></b>
   <u class="age" [innerText]="info.age"></u>
 </a>
 <ng-template #elseContent>
 <span>
-  <nb-checkbox [(ngModel)]="info.isAdmin">Is Admin</nb-checkbox>
+  <nb-checkbox [(ngModel)]="info.isAdmin"></nb-checkbox>
   <input class="name" [(ngModel)]="info.name" />
   <input class="surname" [(ngModel)]="info.surname" />
   <input class="age" [(ngModel)]="info.age" type="number" />
